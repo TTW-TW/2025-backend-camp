@@ -13,6 +13,14 @@ describe(`GET ${route}`, () => {
   let server
   let coachId
   let requestRoute = '/api/coaches'
+
+  // 手動加入：準備一組測試用的帳號資料
+  const testCoachUser = {
+    name: '測試教練',
+    email: `testcoach_${Date.now()}@example.com`,
+    password: 'Password123'
+  }
+
   beforeAll(async () => {
     server = await TestServer.getServer()
     const result = await server
